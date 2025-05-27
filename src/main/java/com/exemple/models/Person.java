@@ -1,6 +1,7 @@
 package com.exemple.models;
 import java.time.LocalDate;
 public class Person {
+	private long Id;
 	private String fullName;
 	private String email;
 	private LocalDate birthdate;
@@ -9,6 +10,7 @@ public class Person {
 	
 	public Person(String fullName,String email,LocalDate birthdate,String Gender,String MaritalStatus)
 	{
+		
 		this.fullName=fullName;
 		this.email=email;
 		this.birthdate=birthdate;
@@ -39,6 +41,10 @@ public class Person {
 	public String getGender()
 	{
 		return Gender;
+	}
+	public long getId()
+	{
+		return Id;
 	}
 	
 }

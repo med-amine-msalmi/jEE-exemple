@@ -1,4 +1,4 @@
-package models;
+package com.exemple.models;
 import java.time.LocalDate;
 public class Person {
 	private String fullName;

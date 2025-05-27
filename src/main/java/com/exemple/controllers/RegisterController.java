@@ -1,7 +1,9 @@
-package exemple;
+package com.exemple.controllers;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDate;
+
+import com.exemple.models.Person;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -9,13 +11,12 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import models.Person;
 
 /**
  * Servlet implementation class Reigister
  */
 @WebServlet(urlPatterns={"/register"})
-public class Register extends HttpServlet {
+public class RegisterController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	
@@ -29,7 +30,7 @@ public class Register extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String FullName=request.getParameter("fullname");
-		PrintWriter out=response.getWriter();	
+		
 		String email=request.getParameter("email");
 		LocalDate birthdate=LocalDate.parse(request.getParameter("birthdate"));
 		String Gender=request.getParameter("gender");
@@ -39,11 +40,8 @@ public class Register extends HttpServlet {
 		//Add it to the request scope . we store the object in the request or session 
 		request.setAttribute("person",person);
 		
-		//Forward to the jsp 
-		RequestDispatcher dispacher=request.getRequestDispatcher("Profile.jsp");
-		dispacher.forward(request, response);
-		
-		
+		RequestDispatcher dispacher=request.getRequestDispatcher("views/Profile.jsp");
+		dispacher.forward(request,response);
 		
 	}
 	

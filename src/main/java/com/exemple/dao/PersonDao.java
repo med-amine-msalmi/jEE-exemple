@@ -56,8 +56,24 @@ public class PersonDao {
 		return persons;
 	}
 	
+	public void DeleteById(Long id)
+	{
+		Connection cnx=DatabaseConnection.getConnection();
+		if(cnx==null)
+			return;
+		String Query="delete from person where id=?";
+		try(cnx;PreparedStatement ps=cnx.prepareStatement(Query))
+		{
+			ps.setLong(1,id);
+			ps.executeUpdate();
+		}catch(Exception ex)
+		{
+			ex.printStackTrace();
+		}
+	}
 	
-	   //test 
+	
+	   //test  dao functions 
 	public static void main(String args[])
 	{
 		Person person=new Person("mohamed","msalmi@gmail.com",LocalDate.of(2001, 2, 19),"male","single");
@@ -67,10 +83,12 @@ public class PersonDao {
 		
 		PersonDao personDao=new PersonDao();
 		try {
-		System.out.println(personDao.getAllPersons());
+			long id=6;
+			personDao.DeleteById(id);
+			System.out.print("person with id="+6+" is deleted successfully");
 		}catch(Exception ex)
 		{
-			System.out.println("failed to retrieve persons");
+			System.out.println("failed to delete person");
 		}
 		
 	}

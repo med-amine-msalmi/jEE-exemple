@@ -34,6 +34,11 @@ public class Person {
 	{
 		return birthdate;
 	}
+	@Override
+	public String toString() {
+		return "Person [Id=" + Id + ", fullName=" + fullName + ", email=" + email + ", birthdate=" + birthdate
+				+ ", Gender=" + Gender + ", MaritalStatus=" + MaritalStatus + "]";
+	}
 	public String getMaritalStatus()
 	{
 		return MaritalStatus;
@@ -42,6 +47,7 @@ public class Person {
 	{
 		return Gender;
 	}
+	
 	public long getId()
 	{
 		return Id;

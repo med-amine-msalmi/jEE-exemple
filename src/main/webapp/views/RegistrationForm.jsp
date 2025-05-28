@@ -5,10 +5,11 @@
 <head>
   <meta charset="UTF-8">
   <title>tp2</title>
-  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/index1.css">
 </head>
 <body>
 
+    
   <form action="${pageContext.request.contextPath}/register" method="post" id="form">
     <label for="fullname">Full name</label>
     <input type="text" name="fullname" id="fullname">
@@ -35,13 +36,12 @@
       
       <input type="radio" id="Single" name="MaritaStatus" value="Single">
       <label for="Single">Single</label>
-      
       <input type="radio" id="Divorced" name="MaritaStatus" value="Divorced">
       <label for="Divorced">Divorced</label>
     </div>
-    
     <input type="submit" value="Register">
   </form>
-
+    <button onclick="window.location.href='${pageContext.request.contextPath}/list';">Persons</button>
+    
 </body>
 </html>

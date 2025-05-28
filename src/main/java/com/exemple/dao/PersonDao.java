@@ -39,7 +39,7 @@ public class PersonDao {
 		Connection cnx=DatabaseConnection.getConnection();
 		if(cnx==null)
 			return persons;
-		String Query="select* from person";
+		String Query="select * from person";
 		try(cnx;PreparedStatement ps=cnx.prepareStatement(Query))
 		{
 			ResultSet rs=ps.executeQuery();
@@ -67,14 +67,11 @@ public class PersonDao {
 		
 		PersonDao personDao=new PersonDao();
 		try {
-		personDao.Save(person);
+		System.out.println(personDao.getAllPersons());
 		}catch(Exception ex)
 		{
-			System.out.println("failed to save new person");
+			System.out.println("failed to retrieve persons");
 		}
 		
 	}
-	
-
-	
 }

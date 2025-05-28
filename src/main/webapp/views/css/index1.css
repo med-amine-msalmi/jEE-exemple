@@ -1,0 +1,83 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Form container */
+#form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form labels */
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Text and email inputs */
+input[type="text"],
+input[type="email"],
+input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Radio button groups */
+div {
+    margin: 15px 0;
+}
+
+/* Radio buttons and their labels */
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+input[type="radio"] + label {
+    display: inline-block;
+    margin-right: 15px;
+    font-weight: normal;
+}
+
+/* Submit button */
+input[type="submit"],
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background-color: #45a049;
+}
+
+/* Persons button */
+button {
+    display: block;
+    margin: 20px auto;
+    background-color: #2196F3;
+}
+
+button:hover {
+    background-color: #0b7dda;
+}

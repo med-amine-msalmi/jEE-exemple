@@ -1,72 +1,104 @@
 @charset "UTF-8";
 
-/* style.css */
-
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f5f7fa;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    padding: 2rem;
+    color: #333;
 }
 
-form {
-  background-color: white;
-  padding: 30px 40px;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 400px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
 }
 
-label {
-  font-weight: 600;
-  margin-bottom: 4px;
+thead tr {
+    background-color: #3f51b5;
+    color: #ffffff;
+    text-align: left;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="date"] {
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  outline: none;
-  transition: border 0.3s ease;
+th, td {
+    padding: 1rem;
+    border-bottom: 1px solid #dddddd;
 }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="date"]:focus {
-  border-color: #007BFF;
+th {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
 }
 
-input[type="radio"] {
-  margin-left: 10px;
-  margin-right: 4px;
+tbody tr {
+    transition: all 0.2s ease;
 }
 
-input[type="submit"] {
-  background-color: #007BFF;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 6px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+tbody tr:nth-child(even) {
+    background-color: #f5f5f5;
 }
 
-input[type="submit"]:hover {
-  background-color: #0056b3;
+tbody tr:hover {
+    background-color: #e8f4ff;
+    transform: translateX(2px);
 }
 
-div > label:first-child {
-  display: block;
-  margin-bottom: 5px;
+/* Button Styles */
+button {
+    background-color: #ff5252;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background-color: #ff0000;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    th, td {
+        min-width: 120px;
+    }
+}
+
+/* Empty State */
+tbody tr.empty-row td {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+    font-style: italic;
+}
+
+/* Status Indicators */
+.status-active {
+    color: #4caf50;
+    font-weight: 500;
+}
+
+.status-inactive {
+    color: #f44336;
+    font-weight: 500;
+}
+
+/* Table Header Icons */
+th i {
+    margin-left: 5px;
+    font-size: 0.8rem;
 }

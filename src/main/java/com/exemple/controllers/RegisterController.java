@@ -29,6 +29,7 @@ public class RegisterController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+	
 		String FullName=request.getParameter("fullname");
 		String email=request.getParameter("email");
 		LocalDate birthdate=LocalDate.parse(request.getParameter("birthdate"));

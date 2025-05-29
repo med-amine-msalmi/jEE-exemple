@@ -21,18 +21,9 @@ import jakarta.servlet.RequestDispatcher;
 public class ListController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	PersonDao personDao=new PersonDao();
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public ListController() {
         super();
-        // TODO Auto-generated constructor stub
     }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		List<Person> persons;
@@ -41,13 +32,12 @@ public class ListController extends HttpServlet {
 		RequestDispatcher dispacher=request.getRequestDispatcher("views/list.jsp");
 		dispacher.forward(request, response);
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
+		Long DeletedId=Long.parseLong(request.getParameter("id"));
+		personDao.DeleteById(DeletedId);
+		response.sendRedirect(request.getContextPath() + "/list");
 	}
 
 }

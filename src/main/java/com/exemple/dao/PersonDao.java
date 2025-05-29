@@ -45,7 +45,7 @@ public class PersonDao {
 			ResultSet rs=ps.executeQuery();
 			while(rs.next())
 			{
-			Person person=new Person(rs.getString("fullname"),rs.getString("email"),rs.getDate("birthdate").toLocalDate(),rs.getString("gender"),rs.getString("maritalstatus"));
+			Person person=new Person(rs.getLong("id"),rs.getString("fullname"),rs.getString("email"),rs.getDate("birthdate").toLocalDate(),rs.getString("gender"),rs.getString("maritalstatus"));
 			persons.add(person);
 			}
 			}catch(SQLException ex)

@@ -8,9 +8,18 @@ public class Person {
 	private String Gender;
 	private String MaritalStatus;
 	
+	public Person(Long Id,String fullName,String email,LocalDate birthdate,String Gender,String MaritalStatus)
+	{
+		this.Id=Id;
+		this.fullName=fullName;
+		this.email=email;
+		this.birthdate=birthdate;
+		this.Gender=Gender;
+		this.MaritalStatus=MaritalStatus;
+	}
 	public Person(String fullName,String email,LocalDate birthdate,String Gender,String MaritalStatus)
 	{
-		
+
 		this.fullName=fullName;
 		this.email=email;
 		this.birthdate=birthdate;

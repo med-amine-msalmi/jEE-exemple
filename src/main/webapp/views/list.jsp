@@ -29,7 +29,14 @@
 					<td>${person.getAge() }</td>
 					<td>${person.getGender() }</td>
 					<td>${person.getMaritalStatus() }</td>
-					<td><button>Delete</button></td>
+					<td>
+						<form action="${pageContext.request.contextPath }/list" onsubmit="return confirm('Are you sure you want to delete ${person.getFulName()}')" method="post" >
+							<input type="hidden" name="id" value="${person.getId() }">
+							
+							
+							<button type="submit">Delete</button>
+						</form>
+					</td>
 				</tr>
 			</c:forEach>
 		</tbody>

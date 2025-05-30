@@ -14,13 +14,16 @@ A simple Java EE web application demonstrating CRUD operations  on a `Person` en
 - Apache Tomcat 10.01
 - HTML,CSS,JS
 
-## 📸 Screenshots
 
-### List of Persons
-![persons](images/home.png)
 
 ### Add New Person
-![Form](images/add.png)
+![Add Person](images/addperson.png)
 
+
+![Registration Successfully](images/Registration.png)
+
+
+### List of Persons
+![persons](images/liste.png)
 
 
